@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Développement Informatique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contain {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: 50px;
+            overflow: hidden;
+        }
+
+        h1,
+        h2 {
+            color: #0090ff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .image-gallery img {
+            width: calc(25% - 10px);
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+            }
+        }
+
+        .contact-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #0090ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #007acc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .contain {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="contain">
+        <h1>Développement Informatique</h1>
+        <p>Notre laboratoire de développement informatique se spécialise dans la création de solutions logicielles
+            personnalisées pour divers besoins industriels et commerciaux. Nous nous concentrons sur la conception, le
+            développement et la maintenance de logiciels, en mettant l'accent sur l'innovation et l'efficacité. Que vous
+            ayez besoin d'une application mobile, d'un logiciel de gestion ou d'une solution cloud, notre équipe est
+            prête à transformer vos idées en réalité.</p>
+
+        <h2>Projets Réalisés</h2>
+        <p>Découvrez quelques-uns de nos projets récents qui illustrent notre expertise et notre capacité à livrer des
+            solutions robustes et innovantes.</p>
+        <div class="image-gallery">
+            <img src="im1.jpg" alt="Développement Application 1" title="Application Mobile de Gestion">
+            <img src="im2.jpg" alt="Développement Application 2" title="Plateforme de Gestion des Données">
+            <img src="im1.jpg" alt="Développement Application 3" title="Système de Gestion des Inventaires">
+            <img src="im2.jpg" alt="Développement Application 4" title="Outil d'Analyse des Données">
+        </div>
+
+        <h2>Pourquoi Choisir Notre Équipe?</h2>
+        <p>Nous offrons des services de développement logiciel de haute qualité avec une approche centrée sur le client.
+            Voici quelques raisons pour lesquelles nos clients nous choisissent :</p>
+        <ul>
+            <li><strong>Expertise Technique</strong> : Notre équipe est composée de développeurs expérimentés et
+                certifiés dans diverses technologies.</li>
+            <li><strong>Solutions Personnalisées</strong> : Nous concevons des solutions logicielles qui répondent
+                spécifiquement aux besoins uniques de chaque client.</li>
+            <li><strong>Support Continu</strong> : Nous offrons un support technique continu pour garantir que vos
+                logiciels fonctionnent de manière optimale.</li>
+            <li><strong>Innovation</strong> : Nous utilisons les dernières technologies et méthodologies pour créer des
+                solutions innovantes.</li>
+        </ul>
+
+        <h2>Contactez-Nous</h2>
+        <p>Vous avez des questions ou souhaitez discuter de votre prochain projet ? Remplissez le formulaire ci-dessous
+            pour entrer en contact avec notre équipe.</p>
+        <div class="contact-form">
+            <h3>Formulaire de Contact</h3>
+            <form id="contact-form">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="prenom">Prénom(s) :</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="sujet">Sujet :</label>
+                <input type="text" id="sujet" name="sujet" required>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("YOUR_USER_ID"); // Remplacez YOUR_USER_ID par votre ID utilisateur EmailJS
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre de manière traditionnelle
+
+            var form = event.target;
+            var formData = new FormData(form);
+
+            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                .then(function (response) {
+                    alert("Votre message a été envoyé avec succès !");
+                    form.reset(); // Réinitialiser le formulaire après l'envoi
+                }, function (error) {
+                    alert("Une erreur est survenue. Veuillez réessayer.");
+                    console.error("Erreur lors de l'envoi de l'email : ", error);
+                });
+        });
+    </script>
+
+    <footer style="margin-top: 50px;"">
+        <div class=" container">
+        <div class="jcposi">
+            <div class="jc1">
+                <h1 style="color:white" ; class="turn beck"><b>CONTACT</b></h1>
+                <p class="turn"><b>01 BP 1091 Bobo-Dioulasso</b></p>
+                <p class="turn"><b>Bobo-Dioulasso</b></p>
+                <p class="turn"><b>Burkina Faso</b></p>
+            </div>
+            <div class="jc1">
+                <h1 style="color:white ;" class="turn beck"> Partenaire</h1>
+                <p class="turn">Firmeallemande </p>
+                <p class="turn">Orange Burkina</p>
+                <p class="turn">LONAB</p>
+                <p class="turn">Universite Nazi Boni</p>
+            </div>
+            <div class="jc1">
+
+                <h1 style="color:white;"> LINKS </h1>
+                <p class="turn"><a href="index.html">Accueil</a></p>
+                <p class="turn"><a href="formulaire.html">formulaire</a></p>
+                <p><a href="imge.html">Equipement</a></p>
+                <p><a href="a propos.html">About us</a></p>
+                <!--  <li><a href="#projects">Projets</a></li>
+             <li><a href="#contact">Contact</a></li> -->
+
+            </div>
+
+
+
+            <div class="jc1 reb">
+                <h1 style="color:white">Plateforme </h1>
+                <p><a href="https://wa.me/qr/DVWYVBGJO5R2A1 "><i class="fab fa-whatsapp"></i> Whatsapp</a></p>
+
+                <p><i class="fab fa-facebook-f"></i>Facebook</a></p>
+            </div>
+
+        </div>
+        <div>
+            &copy; 2024 Laboratoire Électronique et Informatique. Tous droits réservés.
+        </div>
+    </footer>
+
+</body>
+
+</html>

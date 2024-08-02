@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Réservation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contain {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: 50px;
+        }
+
+        h1,
+        h3 {
+            color: #0090ff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0090ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007acc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .contain {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="contain">
+        <h1>Réservez votre séance dans le labo</h1>
+        <h3>Formulaire de Réservation</h3>
+        <p>Voulez-vous réserver une séance dans le labo ?</p>
+        <p>Un programme vous sera envoyé pour que vous puissiez réserver en fonction des horaires disponibles dans la
+            semaine.</p>
+        <form id="reservation-form">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="prenom">Prénom(s) :</label>
+            <input type="text" id="prenom" name="prenom" required>
+            <label for="contact">Contact (avec indicatif) :</label>
+            <input type="tel" id="contact" name="contact" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date" required>
+            <label for="heure-debut">Heure de début :</label>
+            <input type="time" id="heure-debut" name="heure-debut" required>
+            <label for="heure-fin">Heure de fin :</label>
+            <input type="time" id="heure-fin" name="heure-fin" required>
+            <label for="salle">Salle :</label>
+            <select name="salle" id="salle" required>
+                <option value="">Sélectionnez une salle</option>
+                <option value="salle1">Salle 1</option>
+                <option value="salle2">Salle 2</option>
+            </select>
+            <label for="motif-reservation">Motif de la réservation :</label>
+            <textarea name="motif-reservation" id="motif-reservation"></textarea>
+            <button type="submit">Envoyer votre demande de réservation</button>
+        </form>
+    </div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("qesBruRLVeBTz7D11"); // Remplacez YOUR_USER_ID par votre ID utilisateur EmailJS
+        })();
+
+        document.getElementById("reservation-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre de manière traditionnelle
+
+            var form = event.target;
+            var formData = new FormData(form);
+
+            emailjs.sendForm("qesBruRLVeBTz7", "template_8u93ues", formData)
+                .then(function (response) {
+                    alert("Votre demande a été envoyée avec succès !");
+                    form.reset(); // Réinitialiser le formulaire après l'envoi
+                }, function (error) {
+                    alert("Une erreur est survenue. Veuillez réessayer.");
+                    console.error("Erreur lors de l'envoi de l'email : ", error);
+                });
+        });
+    </script>
+
+
+    <footer style="margin-top:60px;">
+        <div class="container">
+            <div class="jcposi">
+                <div class="jc1">
+                    <h1  style="color: white;"     class="turn"><b>CONTACT</b></h1>
+                    <p class="turn"><b>01 BP 1091 Bobo-Dioulasso</b></p>
+                    <p class="turn"><b>Bobo-Dioulasso</b></p>
+                    <p class="turn"><b>Burkina Faso</b></p>
+                </div>
+                <div class="jc1">
+                    <h1  style="color: white;"    class="turn beck"> Partenaire</h1>
+                    <p class="turn">Firmeallemande </p>
+                    <p class="turn">Orange Burkina</p>
+                    <p class="turn">LONAB</p>
+                    <p class="turn">Universite Nazi Boni</p>
+                </div>
+                <div class="jc1">
+
+                    <h1 style="color: white;"  > LINKS </h>
+                    <p class="turn"><a href="index.html">Accueil</a></p>
+
+                    <p><a href="formulaire.html">formulaire</a></p>
+                    <p><a href="imge.html">Equipement</a></p>
+                    <p><a href="a propos.html">About us</a></p>
+                    <!--  <li><a href="#projects">Projets</a></li>
+             <li><a href="#contact">Contact</a></li> -->
+
+                </div>
+
+
+
+                <div class="jc1 reb">
+                    <h1 style="color: white;"  >  Plateforme </h1>
+                    <p><a href="https://wa.me/qr/DVWYVBGJO5R2A1 "><i class="fab fa-whatsapp"></i> Whatsapp</a></p>
+
+                    <p><i class="fab fa-facebook-f"></i>Facebook</a></p>
+                </div>
+
+            </div>
+            <div>
+                &copy; 2024 Laboratoire Électronique et Informatique. Tous droits réservés.
+            </div>
+    </footer>
+
+</body>
+
+</html>

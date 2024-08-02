@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement Électronique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        h1,
+        h2 {
+            color: #0090ff;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        #beck {
+            color: #fff;
+        }
+
+        .item {
+            margin: 20px 0;
+            padding: 20px;
+            background: #e2e2e2;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .item:hover {
+            background: #d0d0d0;
+            transform: scale(1.05);
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .image-grid img {
+            width: calc(30% - 10px);
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.1);
+        }
+
+        .image-grid img.loaded {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid img {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var images = document.querySelectorAll("img");
+            images.forEach(function (img) {
+                img.classList.add("loaded");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Développement Électronique</h1>
+
+        <div class="item">
+            <h2>Conception de Circuits Intégrés</h2>
+            <p>Notre équipe se spécialise dans la conception de circuits intégrés pour diverses applications, y compris
+                les systèmes embarqués, les capteurs intelligents et les dispositifs IoT. Nous utilisons des outils
+                avancés de CAO pour assurer une conception précise et efficace. Nos ingénieurs travaillent en étroite
+                collaboration avec les clients pour comprendre leurs besoins et créer des solutions sur mesure.</p>
+            <div class="image-grid">
+                <img src="im2.jpg" alt="Conception de Circuits Intégrés">
+                <img src="im2.jpg" alt="Conception de Circuits Intégrés">
+                <img src="im2.jpg" alt="Conception de Circuits Intégrés">
+                <img src="im1.jpg" alt="Conception de Circuits Intégrés">
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>Développement de Systèmes Embarqués</h2>
+            <p>Nous développons des systèmes embarqués sur mesure pour répondre aux besoins spécifiques de nos clients.
+                Cela inclut la programmation de microcontrôleurs, l'intégration de capteurs et la conception de PCB
+                (circuit imprimé). Notre expertise couvre une large gamme de technologies et de plateformes, nous
+                permettant de fournir des solutions robustes et fiables pour diverses applications industrielles.</p>
+            <div class="image-grid">
+                <img src="im2.jpg" alt="Développement de Systèmes Embarqués">
+                <img src="im2.jpg" alt="Développement de Systèmes Embarqués">
+                <img src="im2.jpg" alt="Développement de Systèmes Embarqués">
+                <img src="im1.jpg" alt="Développement de Systèmes Embarqués">
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>Prototypage Rapide</h2>
+            <p>Grâce à nos équipements de pointe, nous pouvons passer rapidement de la conception à la réalisation de
+                prototypes fonctionnels. Cela nous permet de tester et de valider nos concepts avant la production en
+                série. Nos services de prototypage incluent l'impression 3D, la fabrication de PCB, et l'assemblage de
+                composants électroniques. Nous nous engageons à fournir des prototypes de haute qualité dans des délais
+                courts.</p>
+            <div class="image-grid">
+                <img src="im2.jpg" alt="Prototypage Rapide">
+                <img src="im2.jpg" alt="Prototypage Rapide">
+                <img src="im2.jpg" alt="Prototypage Rapide">
+                <img src="im2.jpg" alt="Prototypage Rapide">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="jcposi">
+                <div class="jc1">
+                    <h1 id="beck" class="turn"><b>CONTACT</b></h1>
+                    <p class="turn"><b>01 BP 1091 Bobo-Dioulasso</b></p>
+                    <p class="turn"><b>Bobo-Dioulasso</b></p>
+                    <p class="turn"><b>Burkina Faso</b></p>
+                </div>
+                <div class="jc1">
+                    <h1 id="beck" class="turn"> Partenaire</h1>
+                    <p class="turn">Firmeallemande </p>
+                    <p class="turn">Orange Burkina</p>
+                    <p class="turn">LONAB</p>
+                    <p class="turn">Universite Nazi Boni</p>
+                </div>
+                <div class="jc1">
+
+                    <h1 style="color:white"> LINKS </h1>
+                    <p class="turn"><a href="index.html">Accueil</a></p>
+
+                    <p><a href="formulaire.html">formulaire</a></p>
+                    <p><a href="imge.html">Equipement</a></p>
+                    <p><a href="a propos.html">About us</a></p>
+                    <!--  <li><a href="#projects">Projets</a></li>
+             <li><a href="#contact">Contact</a></li> -->
+
+                </div>
+
+
+
+                <div class="jc1 reb">
+                    <h1 id="beck">Plateforme </h1>
+                    <p><a href="https://wa.me/qr/DVWYVBGJO5R2A1 "><i class="fab fa-whatsapp"></i> Whatsapp</a></p>
+
+                    <p><i class="fab fa-facebook-f"></i>Facebook</a></p>
+                </div>
+
+            </div>
+            <div>
+                &copy; 2024 Laboratoire Électronique et Informatique. Tous droits réservés.
+            </div>
+    </footer>
+
+</body>
+
+</html>
